@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user
 
-  CLIENT_ID = "dummy"
+  client_id = "dummy_id"
+  client_secret = "dummy_secret"
 
   private
 
