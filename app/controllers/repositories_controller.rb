@@ -1,8 +1,8 @@
 class RepositoriesController < ApplicationController
 
   def index
-    client_id = nil
-    client_secret = nil
+    client_id = "dummy_id"
+    client_secret = "dummy_secret"
 
     response = Faraday.get "https://api.github.com/user" do |req|
       req.body = { 'client_id': client_id, 'client_secret': client_secret }
