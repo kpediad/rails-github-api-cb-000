@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
   skip_before_action :authenticate_user
 
+  client_id = "dummy_id"
+  client_secret = "dummy_secret"
+
   def create
     response = Faraday.post "https://github.com/login/oauth/access_token" do |req|
       req.body = { 'client_id': client_id, 'client_secret': client_secret, 'code': params[:code] }
