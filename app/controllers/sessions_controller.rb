@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
 
 
   def create
-    client_id = "dummy_id"
-    client_secret = "dummy_secret"
+    client_id = nil
+    client_secret = nil
 
     response = Faraday.post "https://github.com/login/oauth/access_token" do |req|
       req.body = { 'client_id': client_id, 'client_secret': client_secret, 'code': params[:code] }
